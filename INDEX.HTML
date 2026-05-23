@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Expense Tracker</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar">
+
+      <h2>Expense Tracker</h2>
+
+      <div class="salary-box">
+
+        <label>Monthly Salary</label>
+
+        <input type="number" id="salaryInput" placeholder="Enter Salary">
+
+        <button onclick="setSalary()">
+          Save Salary
+        </button>
+
+      </div>
+
+      <div class="form-box">
+
+        <input type="text" id="text" placeholder="Transaction Name">
+
+        <input type="number" id="amount" placeholder="Amount">
+
+        <input type="date" id="date">
+
+        <select id="category">
+
+          <option>Food</option>
+          <option>Shopping</option>
+          <option>Travel</option>
+          <option>Entertainment</option>
+          <option>Salary</option>
+          <option>Other</option>
+
+        </select>
+
+        <button class="income-btn" onclick="addTransaction('income')">
+          Add Income
+        </button>
+
+        <button class="expense-btn" onclick="addTransaction('expense')">
+          Add Expense
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+
+    <div class="main-content">
+
+      <div class="top-bar">
+
+        <h1>Finance Dashboard</h1>
+
+        <button id="themeBtn" onclick="toggleTheme()">
+          🌙 Dark Mode
+        </button>
+
+      </div>
+
+      <!-- CARDS -->
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Balance</h3>
+          <h2 id="balance">₹0</h2>
+        </div>
+
+        <div class="card">
+          <h3>Income</h3>
+          <h2 id="income">₹0</h2>
+        </div>
+
+        <div class="card">
+          <h3>Expense</h3>
+          <h2 id="expense">₹0</h2>
+        </div>
+
+        <div class="card">
+          <h3>Salary</h3>
+          <h2 id="salaryDisplay">₹0</h2>
+        </div>
+
+      </div>
+
+      <!-- CHART + CARD -->
+
+      <div class="bottom-section">
+
+        <div class="chart-container">
+
+          <canvas id="expenseChart"></canvas>
+
+        </div>
+
+        <!-- DEBIT CARD -->
+
+        <div class="debit-card">
+
+          <div class="card-top">
+
+            <h3>My Card</h3>
+
+            <span>VISA</span>
+
+          </div>
+
+          <div class="card-number">
+            4587 2245 9987
+          </div>
+
+          <div class="card-details">
+
+            <div>
+              <p>Card Holder</p>
+              <h4>Vikrant Singh</h4>
+            </div>
+
+            <div>
+              <p>Limit</p>
+              <h4>₹100000</h4>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- TRANSACTIONS -->
+
+      <div class="transactions">
+
+        <h2>Recent Transactions</h2>
+
+        <ul id="transactionList"></ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
